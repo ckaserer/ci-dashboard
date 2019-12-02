@@ -35,10 +35,13 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            {% for job in repo.last_build.jobs %}
-                                <a href="{{job.url}}" style="float: right;" target="_blank" title="job {{job.number}} [{{job.state|capitalize}}]">
-                                    <div class="job-div state-{{job.state}}"></div>
+                            <!-- for job in repo.last_build.jobs -->
+                            {% for n in range(repo.last_build.jobs | length) %}
+                                {% if n|int < 182 %}
+                                <a href="{{repo.last_build.jobs[n].url}}" style="float: right;" target="_blank" title="job {{repo.last_build.jobs[n].number}} [{{repo.last_build.jobs[n].state|capitalize}}]">
+                                    <div class="job-div state-{{repo.last_build.jobs[n].state}}"></div>
                                 </a>
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>
