@@ -64,7 +64,7 @@ def repo_modal():
     html = render_template("modal.html", repo=repo)
     return html
 
-@app.route("/settings", methods=['GET', 'POST'])
+# @app.route("/settings", methods=['GET', 'POST'])
 def settings():
     success = None
     if request.method == 'POST':    
