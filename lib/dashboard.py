@@ -10,7 +10,7 @@ class Dashboard:
         self.repos = self.__config['repos']
         self.threads = self.__config['threads']
         self.grid_size = self.__config['grid_size']
-        self.repos_per_page = int(math.pow(self.grid_size, 2))
+        self.repos_per_page = int(self.grid_size*3)
 
     def fetch(self, **kwargs):
         if 'page' in kwargs:
